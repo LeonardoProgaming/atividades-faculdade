@@ -1,0 +1,44 @@
+import pandas as pd
+
+
+dados = {
+    'Linguagem': ['SAS', 'Dart', 'Kotlin', 'JavaScript', 'Swift', 'PHP', 'Java', 'R', 'Python', 'C', 'C++', 'Objective-C',
+                  'TypeScript', 'HTML/CSS', 'SQL', 'Delphi', 'Ruby', 'C#', 'Haskell', 'Perl', 'MATLAB', 'OCaml', 'F#',
+                  'Scala', 'Go', 'Elixir', 'VBA', 'PowerShell', 'Solidity', 'Rust', 'Julia', 'Erlang', 'Fortran', 'Crystal',
+                  'Clojure'],
+    'Salario_2022': [64243, 43724, 69318, 65580, 78468, 50496, 64572, 67734, 71105, 67186, 68000, 83165, 70276, 63984,
+                     69108, 63984, 93000, 69516, 80250, 90073, 57588, 86948, 95526, 92780, 89204, 92959, 62328, 78084,
+                     70368, 87047, 77966, 103000, 80000, 84690, 106644],
+    'Salario_2023': [81000, 55862, 78207, 74034, 86897, 58899, 72701, 74963, 78331, 74351, 74963, 90000, 77104, 70148,
+                     74963, 69608, 98522, 74963, 85672, 94540, 61735, 91026, 99311, 96381, 92760, 96381, 65698, 81311,
+                     72656, 87012, 74963, 99492, 76104, 77104, 96381]
+}
+
+
+df = pd.DataFrame(dados)
+
+
+print(df)
+import matplotlib.pyplot as plt
+
+
+linguagens = df['Linguagem']
+salario_2022 = df['Salario_2022']
+salario_2023 = df['Salario_2023']
+
+
+plt.figure(figsize=(10, 6))
+plt.plot(linguagens, salario_2022, marker='o', label='Salário em 2022')
+plt.plot(linguagens, salario_2023, marker='x', label='Salário em 2023')
+
+
+plt.title('Salário por Linguagem de Programação')
+plt.xlabel('Linguagem')
+plt.ylabel('Salário')
+plt.xticks(rotation=90)
+plt.grid(True)
+plt.legend()
+
+
+plt.tight_layout()
+plt.show()

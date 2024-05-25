@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-# Dados das capitais e suas populações em 2022
+
 capitais = [
     'São Paulo', 'Rio de Janeiro', 'Brasília', 'Fortaleza', 'Salvador',
     'Belo Horizonte', 'Manaus', 'Curitiba', 'Recife', 'Goiânia',
@@ -18,7 +18,7 @@ populacao_2022 = [
     322869, 302692
 ]
 
-# Associação de cada capital à sua região correspondente
+
 regioes = {
     'São Paulo': 'Sudeste', 'Rio de Janeiro': 'Sudeste', 'Belo Horizonte': 'Sudeste', 'Vitória': 'Sudeste',
     'Brasília': 'Centro-Oeste', 'Goiânia': 'Centro-Oeste', 'Campo Grande': 'Centro-Oeste', 'Cuiabá': 'Centro-Oeste',
@@ -27,7 +27,7 @@ regioes = {
     'Curitiba': 'Sul', 'Porto Alegre': 'Sul', 'Florianópolis': 'Sul', 'Rio Branco': 'Norte'
 }
 
-# Calcula a população total de cada região
+
 populacao_por_regiao = {}
 for capital, populacao in zip(capitais, populacao_2022):
     regiao = regioes[capital]
@@ -36,11 +36,10 @@ for capital, populacao in zip(capitais, populacao_2022):
     else:
         populacao_por_regiao[regiao] += populacao
 
-# Criar o gráfico de setores
+
 plt.figure(figsize=(10, 8))
 plt.pie(populacao_por_regiao.values(), labels=populacao_por_regiao.keys(), autopct='%1.1f%%', startangle=140)
 plt.title('Distribuição da População Brasileira por Região em 2022')
-plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.axis('equal')  
 
-# Exibir o gráfico
 plt.show()
